@@ -15,13 +15,19 @@ function SOHO(){
 	}
 
 	function query_response_lasco_c3(res){
-		if(!res.results){ parse(null); return; }
-		if(res.results.length === 0){ parse(null); return; }
+		if(!res.results){ return(parse_lasco_c3(null)); }
+		if(res.results.length === 0){ return(parse_lasco_c3(null)); }
 		
 		parse_lasco_c3(res.results[0]);
 	}
 
 	function parse_lasco_c3(res){
+		if(res === null){
+			alert("The servers are overloaded. Try again!");
+			document.location.reload();
+			return;
+		}
+
 		var h = $.parseHTML(res);
 		var imgs = $(h).find("img");
 		
