@@ -15,8 +15,7 @@ function SOHO(){
 	}
 
 	function query_response_lasco_c3(res){
-		if(!res.results){ return(parse_lasco_c3(null)); }
-		if(res.results.length === 0){ return(parse_lasco_c3(null)); }
+		if(!res || !res.results || res.results.length === 0){ return(parse_lasco_c3(null)); }
 		
 		parse_lasco_c3(res.results[0]);
 	}
@@ -58,9 +57,8 @@ function SOHO(){
 
 
 	function show_lasco_c3(option){
-		if(!option["preview"] || option["preview"] !== true){
+		if(!option || !option["preview"] || option["preview"] !== true){
 			$("#soho-anim-progress-container").hide();
-			return;
 		}
 
 		//Scroll page
@@ -74,10 +72,13 @@ function SOHO(){
 			$("#lasco_c3_"+list[0]).attr("soho-anim-active", "true");
 			$('.lasco_c3[soho-anim-active="true"]').show();
 		}else if(list.length > 0){
-				var img_active_index = $('.lasco_c3[soho-anim-active="true"]')[0].id.replace('lasco_c3_','');
-				img_active_index = parseInt(img_active_index);
+				var imgs_active =  $('.lasco_c3[soho-anim-active="true"]');
+				if(imgs_active.length === 0) return;
 				
-				for(i in list){	
+				var img_active_index = imgs_active[0].id.replace('lasco_c3_','');
+					img_active_index = img_active_index ? parseInt(img_active_index) : 0;
+				
+				for(i in list){
 					if(list[i] < img_active_index){
 						$("#lasco_c3_"+img_active_index).attr("soho-anim-active", "false");
 						$("#lasco_c3_"+list[i]).attr("soho-anim-active", "true");
@@ -98,7 +99,6 @@ function SOHO(){
 
 	function check_lasco_c3(){
 		if(lasco_c3_imgs_called === lasco_c3_imgs_length){
-			clearInterval(self.check_lasco_c3_interval);
 			return(show_lasco_c3());
 		}
 
