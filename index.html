@@ -36,14 +36,9 @@
 	<!-- Styles -->
 	<link  rel="stylesheet" href="/styles/twitter-bootstrap.css" /><link  rel="stylesheet" href="/styles/style.css" />
 
-	<!-- Xdomain script -->
-	<script src="/vendor/xdomain/xdomain.min.js" slave="http://soho-rt.github.io/vendor/xdomain/proxy.html"></script>
-
-	<!-- Jquery -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-
 	<!-- Scripts -->
-	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script><script defer="defer"  src="/vendor/xdomainajax/jquery.xdomainajax.js"></script>
 </head>
 <body>
 	<!-- Menu -->
@@ -85,34 +80,41 @@
 
 <!-- Example row of columns -->
 <div class="row" class="text-center">
-	<div id="soho-anim" class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-3 well" style="margin-top:10%;">
+		<h2>Instrument (LASCO/C3)</h2>
+		<p>See the latest images from SOHO LASCO/C3 instrument (Solar & Heliospheric Observatory).</p>
+		<p><a href="http://soho.esac.esa.int/data/realtime-images.html">Learn more about SOHO.</a></p>
+		<p><a id="soho-lasco-c3-start-btn" class="btn btn-success" href="#">Start</a><span id="soho-lasco_c3-alert"></span></p>
 	</div>
-	<div id="output"></div>
 </div>
 
 <!-- Example row of columns -->
 <div class="row" class="text-center">
-	<div class="col-md-6 col-md-offset-3 well">
-		<h2>Instrument (LASCO/C3)</h2>
-		<p>DocPad takes that good ol' simple approach of writing files and wraps it with the best modern innovations, providing an awesome intuitive, liberating and empowering solution for HTML5 web development.</p>
-		<p><a class="btn btn-default" href="https://github.com/bevry/docpad">Visit Website</a></p>
+	<div id="soho-anim" class="col-md-6 col-md-offset-3">
+		<div id="soho-anim-progress-container" hidden>
+			<div class="progress progress-striped active">
+				<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+					<span class="sr-only"></span>
+				</div>
+			</div>
+			<span id="soho-lasco_c3-progress-alert" class="col-md-offset-4" style="color:#ffffff;">Loading images from NASA servers ...</span>
+		</div>
 	</div>
 </div>
 
+
 <!-- soho script -->
-<script type="text/javascript">
-    //jquery ajax call
-    $("#output").load('http://s3.amazonaws.com/jpillora-usa/xdomain/data1.json');
-  </script>
+<script type="text/javascript" src="/soho/lasco_c3.js"></script>
 		</section>
 
-		<!-- Footer -->
+		<!-- Footer 
 		<footer>
 			<p class="pull-left">&copy; Company 2013</p>
 			<p class="pull-right">
-				This website was last updated at 2013-11-29T04:14:05.332Z
+				This website was last updated at 2013-11-29T11:27:00.154Z
 			</p>
 		</footer>
+		-->
 	</div><!-- /container -->
 </body>
 </html>
