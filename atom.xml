@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Soho - The Solar &amp; Heliospheric Observatory</title>
+	<link href="http://soho.github.io/atom.xml" rel="self"/>
+	<link href="http://soho.github.io"/>
+	<updated>2013-11-29T03:21:37.526Z</updated>
+	<id>http://soho.github.io</id>
+	<author>
+		<name>Lucas</name>
+		<email>your@email.com</email>
+	</author>
+</feed>
