@@ -34,7 +34,7 @@ function SOHO(){
 		imgs.each(scraper_lasco_c3);
 		
 		/* Call check_lasco_c3 to check the number of images downloaded */
-		self.check_lasco_c3_interval = setInterval(check_lasco_c3, 1000);
+		self.check_lasco_c3_interval = setInterval(check_lasco_c3, 200);
 	}
 
 	function scraper_lasco_c3(index, img){
