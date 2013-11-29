@@ -35,6 +35,15 @@
 
 	<!-- Styles -->
 	<link  rel="stylesheet" href="/styles/twitter-bootstrap.css" /><link  rel="stylesheet" href="/styles/style.css" />
+
+	<!-- Xdomain script -->
+	<script src="/vendor/xdomain/xdomain.min.js" slave="http://localhost:9778/vendor/xdomain/proxy.html"></script>
+
+	<!-- Jquery -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script>
 </head>
 <body>
 	<!-- Menu -->
@@ -90,25 +99,20 @@
 	</div>
 </div>
 
-<!-- Xdomain -->
-<script type="text/javascript" src="/vendor/xdomain/xdomain.js"></script>
-
-<!-- SOHO IMAGES -->
+<!-- soho script -->
 <script type="text/javascript">
-
-</script>
+    //jquery ajax call
+    $("#output").load('http://s3.amazonaws.com/jpillora-usa/xdomain/data1.json');
+  </script>
 		</section>
 
 		<!-- Footer -->
 		<footer>
 			<p class="pull-left">&copy; Company 2013</p>
 			<p class="pull-right">
-				This website was last updated at 2013-11-29T03:21:37.526Z
+				This website was last updated at 2013-11-29T04:09:42.997Z
 			</p>
 		</footer>
 	</div><!-- /container -->
-
-	<!-- Scripts -->
-	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script>
 </body>
 </html>
