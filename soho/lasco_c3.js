@@ -6,12 +6,15 @@ function SOHO(){
 	 ,	lasco_c3_imgs_called = 0
 	 ,	lasco_c3_imgs_called_index = [];
 
-	this.get_lasco_c3 = function(){
-		//Show progress bar
-		$("#soho-anim-progress-container").show();
-		$("#soho-lasco_c3-alert").text(" (Wait! Will take a while)");
+	this.get_lasco_c3 = function(opt){
+		if(!opt){ console.warn("get_lasco_c3 function require dict with parameters (frames and callback)"); return; }
 
-		$.get("http://sohodata.nascom.nasa.gov/cgi-bin/data_query_search_url?Session=web&Resolution=2&Display=Images&NumImg=30&Types=instrument%3DLASCO%3Adetector%3DC3").done(query_response_lasco_c3);
+		if(opt["frames"] && parseInt(opt["frames"]) > 0)
+			$.get("http://sohodata.nascom.nasa.gov/cgi-bin/data_query_search_url?Session=web&Resolution=2&Display=Images&NumImg="+parseInt(opt["frames"]).toFixed(0)+"&Types=instrument%3DLASCO%3Adetector%3DC3").done(query_response_lasco_c3);
+		else
+			$.get("http://sohodata.nascom.nasa.gov/cgi-bin/data_query_search_url?Session=web&Resolution=2&Display=Images&NumImg=30&Types=instrument%3DLASCO%3Adetector%3DC3").done(query_response_lasco_c3);
+
+		if(opt["callback"] && typeof(opt["callback"]) === "function") return(opt["callback"]());
 	}
 
 	function query_response_lasco_c3(res){
@@ -61,10 +64,10 @@ function SOHO(){
 			$("#soho-anim-progress-container").hide();
 		}
 
-		//Scroll page
+		/*Scroll page
 		if($("#soho-anim img:first").is("img") === true){
 			$(document).scrollTop($("#soho-anim img:first").height());
-		}
+		}*/
 		
 		var list= lasco_c3_imgs_called_index.sort(function(a,b){return b-a});
 
@@ -124,7 +127,25 @@ function SOHO(){
 }
 
 var SO = new SOHO();
+
+/* SOHO - LASCO/C3 */
 $("#soho-lasco-c3-start-btn").click(function(){
-	$(this).attr("disabled","disabled");
-	SO.get_lasco_c3();
+	var self = $(this);
+	self.attr("disabled","disabled");
+
+	function lasco_c3_init(){
+		//Show progress bar
+		$("#soho-anim-progress-container").show();
+		$("#soho-lasco_c3-alert").text(" (Wait! Will take a while)");
+	
+		//Enable start button
+		self.removeAttr("disabled");
+	}
+
+	var opt = {
+		"frames": $("#soho-lasco-c3-frames").val().length > 0 ? parseInt($("#soho-lasco-c3-frames").val()) : 30,
+		"callback": lasco_c3_init
+	};
+
+	SO.get_lasco_c3(opt);
 });
