@@ -1,0 +1,2 @@
+Stereo.router = new function(){
+};

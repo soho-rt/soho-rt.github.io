@@ -1,3 +1,7 @@
-a,a:link{cursor:pointer}
-body{padding-top:60px;background-image:url("/images/backgrounds/soho.jpg")}
-table tfoot th,table tbody th{border-top:1px solid #ddd}
+.navbar-default{background-color:#fff}
+.footer{min-height:150px;color:#fff;padding:1% 0 2% 7%}
+.bs-header{font-size:21px;text-align:left;padding:50px 15px 20px;font-size:16px;color:rgba(255,255,255,0.43)}
+.footer,.bs-header{background-image:url("/images/backgrounds/diagmonds/diagmonds_@2X.png")}
+#wrap{background-color:#fff;min-height:400px}
+.show-grid{background-color:#fff}
+.show-grid [class^="col-"]{padding-top:10px;padding-bottom:10px}

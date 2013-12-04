@@ -10,10 +10,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<!-- Our site title and description -->
-	<title>Home | Soho - The Solar &amp; Heliospheric Observatory</title>
-	<meta name="description" content="Unofficial page with animated images of LASCO/C3 SOHO instrument." />
-	<meta name="keywords" content="soho, nasa, esa, ison, comet, ison comet, real time" />
-	<meta name="author" content="Lucas" />
+	<title>Home | Stereo</title>
+	<meta name="description" content="Unofficial page with animated images of Stereo Mission instruments." />
+	<meta name="keywords" content="stereo, nasa, esa, ison, comet, ison comet, real time" />
+	<meta name="author" content="" />
 
 	<!-- Output DocPad produced meta elements -->
 	<meta name="generator" content="DocPad v6.54.10" />
@@ -35,14 +35,10 @@
 
 	<!-- Styles -->
 	<link  rel="stylesheet" href="/styles/twitter-bootstrap.css" /><link  rel="stylesheet" href="/styles/style.css" />
-
-	<!-- Scripts -->
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script><script defer="defer"  src="/vendor/xdomainajax/jquery.xdomainajax.js"></script>
 </head>
 <body>
-	<!-- Menu -->
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<!-- Menu --> 
+	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -50,80 +46,131 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">SOHO on Real Time</a>
+				<a class="navbar-brand" href="/">STEREO</a>
 			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
+			<div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+     			<ul class="nav navbar-nav">
+					<li class="dropdown">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create <b class="caret"></b></a>
+				    <ul class="dropdown-menu">
+				      <li class="dropdown-header">Instruments</li>
+				      <li class="divider"></li>
+				      <li><a href="#wrap" class="instrument-add-btn">Add instrument</a></li>
+				    </ul>
+				  </li>
 				</ul>
-			</div><!--/.navbar-collapse -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-	<!-- Content -->
-	<div class="container">
-		<!-- Content -->
-		<section id="content" class="content">
-			<!-- Pprimary marketing message or call to action -->
-<!--<div class="jumbotron">
-	<h1>Welcome to your new site!</h1>
-	<p>
-		We've copied over the
-		<a href="https://github.com/docpad/twitter-bootstrap.docpad">
-			Bootstrap Skeleton
-		</a>
-		for you already, which is what you're currently viewing.
+	<div class="bs-header">
+	  <div class="container">
+	    <h1>Stereo</h1>
+	    <p>See the latest images from Stereo Mission.</p>
+	    <p><a href="http://stereo.gsfc.nasa.gov" target="_blank">Learn more about the mission.</a></p>
+	  </div>
+	</div>
 
-		Step through the guide below and we'll walk you through the process of working with your first docpad website :-)
+
+	<!-- Content -->
+	<!--
+<div class="jumbotron">
+	<h1>See the wonders of the universe.</h1>
+	<p>
+		Follow the latest images sent from leading probes, telescopes and satellites and discover new planets, comets and stars online as if in a control center of a space agency.
 	</p>
+	<a href="/dashboard" class="btn btn-primary btn-lg">Explore</a>
 </div>
 -->
 
-<!-- Example row of columns -->
-<div class="row" class="text-center">
-	<div class="col-md-6 col-md-offset-3 well" style="margin-top:10%;">
-		<h2>Instrument (LASCO/C3)</h2>
-		<p>See the latest images from SOHO LASCO/C3 instrument (Solar & Heliospheric Observatory).</p>
-		<p><a href="http://soho.esac.esa.int/data/realtime-images.html">Learn more about SOHO.</a></p>
-		<div class="row">
-		  <div class="col-lg-4">
-			<input id="soho-lasco-c3-frames" type="number" class="form-control" min="1" placeholder="Number of frames">
-		  </div><!-- /.col-lg-4 -->
-		  <div class="col-lg-8">
-		  	<button id="soho-lasco-c3-start-btn" class="btn btn-success" type="button">Start</button>
-		    <span id="soho-lasco_c3-alert"></span>
-		  </div>
-		</div>
-	</div>
-</div>
+<div id="wrap">
+	<div class="container">
+		<h3>Latest images</h3>
+		<div id="instruments" class="row show-grid text-center">	
+			<div class="col-sm-4 col-md-4 instrument-new-form">
+		  		<div class="panel panel-success">
+			  		<div class="panel-heading">New Instrument
+			  			<button type="button" class="close">&times;</button>
+			  		</div>
+			  		<div class="panel-body">
+			    		<form class="form-horizontal" role="form">
+							<div class="form-group">
+				    			<label class="col-sm-3 control-label">Instrument</label>
+				    			<div class="col-sm-9">
+						      		<select class="form-control input-sm" name="instrument">
+								  		<option value="soho-lasco-c2">SOHO - LASCO/C2</option>
+								  		<option value="soho-lasco-c3">SOHO - LASCO/C3</option>
+									</select>
+				    			</div>
+				  			</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Quality</label>
+								<div class="col-sm-9">
+									<select class="form-control input-sm" name="quality">
+										<option value="low">Low</option>
+										<option value="high">High</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Frames</label>
+								<div class="col-sm-9">
+									<input type="number" name="num_img" min="1" value="30" class="form-control input-sm">
+								</div>
+							</div>
 
-<!-- Example row of columns -->
-<div class="row" class="text-center">
-	<div id="soho-anim" class="col-md-6 col-md-offset-3">
-		<div id="soho-anim-progress-container" hidden>
-			<div class="progress progress-striped active">
-				<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only"></span>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Speed</label>
+								<div class="col-sm-9">
+									0 ms<input type="range" name="time" min="1" max="1000" value="200" class="input-sm">1000 ms
+								</div>
+							</div>
+
+							<div class="form-group"><hr>
+								<div class="col-sm-offset-1 col-sm-10">
+									<button type="button" class="btn btn-success instrument-create-btn">Load images</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
-			<span id="soho-lasco_c3-progress-alert" class="col-md-offset-4" style="color:#ffffff;">Loading images from NASA servers ...</span>
+												
 		</div>
 	</div>
 </div>
 
 
-<!-- soho script -->
-<script type="text/javascript" src="/soho/lasco_c3.js"></script>
-		</section>
+<!-- Stereo -->
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+		var src=["/vendor/iz/iz.js", "/vendor/page.js/page.js", "/vendor/arg.js/arg.js","/stereo/stereo.js"];
+		for(i in src){
+			var s = document.createElement("script");
+			s.async=true;
+			s.src=src[i];
+			document.getElementsByTagName("script")[0].insertBefore(s);
+		}
+	},false);
+</script>
 
-		<!-- Footer 
-		<footer>
-			<p class="pull-left">&copy; Company 2013</p>
-			<p class="pull-right">
-				This website was last updated at 2013-11-30T02:56:15.514Z
-			</p>
-		</footer>
-		-->
-	</div><!-- /container -->
+	<div class="footer">
+		<div id="about" class="row container">
+			<div class="col-md-6">
+				<h3>Stereo</h3>
+				<p>Made with very coffee and 💙 by <a href="http://github.com/lucasbrigida" target="_blank">Lucas Brígida</a></p><br>
+				<p>The brands shown and their contents are by their holders.</p>
+			</div>
+			<div class="col-md-6">
+			</div>
+		</div>
+	</div>
+		
+	<!-- Scripts -->
+	<script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script>
 
 	<!-- Google Analytics -->
 	<script>
