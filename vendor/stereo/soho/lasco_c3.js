@@ -74,7 +74,11 @@ Stereo.soho.soho_lasco_c3 = function(){
 	}
 
 	function _parse(response){
-		if(!response || !response.results || response.results.length === 0){ Stereo.soho.warn("[LASCO/C3] _parse:function - Server no response."); return; }
+		if(!response || !response.results || response.results.length === 0){ 
+			Stereo.soho.warn("[LASCO/C3] _parse:function - Server no response.");
+			alert("Sorry! Server no response. Try again.");
+			return;
+		}
 		
 		var html = $.parseHTML(response.results[0]);
 		imgs = $(html).find("img")

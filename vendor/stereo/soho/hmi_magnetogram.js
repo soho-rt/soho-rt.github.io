@@ -74,7 +74,11 @@ Stereo.soho.soho_hmi_magnetogram = function(){
 	}
 
 	function _parse(response){
-		if(!response || !response.results || response.results.length === 0){ Stereo.soho.warn("[HMI/Magnetogram] _parse:function - Server no response."); return; }
+		if(!response || !response.results || response.results.length === 0){ 
+			Stereo.soho.warn("[HMI/Magnetogram] _parse:function - Server no response.");
+			alert("Sorry! Server no response. Try again.");
+			return; 
+		}
 		
 		var html = $.parseHTML(response.results[0]);
 		imgs = $(html).find("img")

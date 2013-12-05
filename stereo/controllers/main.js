@@ -9,7 +9,6 @@ Stereo.controllers.main = new function(){
 	 		 *	@require: "url of the requested source" (optional - Not implemented)
 	 		 */
 	 		{"src":"/stereo/controllers/instruments.js"},
-	 		{"src":"/stereo/controllers/dashboard.js"},
 	 		{"src": "/vendor/xdomainajax/jquery.xdomainajax.js"}
 		]);
 	};
