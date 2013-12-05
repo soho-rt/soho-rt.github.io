@@ -15,7 +15,15 @@ Stereo.views.instruments = new function(){
 					      		<select class="form-control input-sm" name="instrument">\
 							  		<option value="soho-lasco-c2">SOHO - LASCO/C2</option>\
 							  		<option value="soho-lasco-c3">SOHO - LASCO/C3</option>\
-								</select>\
+\
+							  		<option value="soho-eit-171">SOHO - EIT/171</option>\
+							  		<option value="soho-eit-195">SOHO - EIT/195</option>\
+							  		<option value="soho-eit-284">SOHO - EIT/284</option>\
+							  		<option value="soho-eit-304">SOHO - EIT/304</option>\
+\
+							  		<option value="soho-hmi-continuum">SOHO - HMI/Continuum</option>\
+							  		<option value="soho-hmi-magnetogram">SOHO - HMI/Magnetogram</option>\
+							  		</select>\
 			    			</div>\
 			  			</div>\
 						<div class="form-group">\

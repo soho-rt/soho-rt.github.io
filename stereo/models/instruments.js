@@ -107,6 +107,162 @@ Stereo.models.instruments = new function(){
 			} else return(Stereo.warn(msg));
 		
 			cb(query);
+		},
+		"soho-eit-171": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-171:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-171:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-171:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:eit-171:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
+		},
+		"soho-eit-195": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-195:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-195:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-195:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:eit-195:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
+		},
+		"soho-eit-284": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-284:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-284:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-284:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:eit-284:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
+		},
+		"soho-eit-304": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-304:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-304:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:eit-304:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:eit-304:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
+		},
+		"soho-hmi-continuum": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-continuum:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-continuum:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-continuum:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-continuum:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
+		},
+		"soho-hmi-magnetogram": function(query, cb){
+			var msg;
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-magnetogram:function - num_img is required.";
+			if(query["num_img"]){ 
+				if(!parseInt(query["num_img"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-magnetogram:function - quality is required (values: 1 or 2).";
+			if(query["quality"]){ 
+				if(typeof(query["quality"]) !== "string") return(Stereo.warn(msg));
+				if(query["quality"] !== "high" && query["quality"] !== "medium" && query["quality"] !== "low") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+			
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-magnetogram:function - time is required (in milliseconds).";
+			if(query["time"]){
+				if(!parseInt(query["time"])) return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+
+			msg = "[MODEL:INSTRUMENTS] validators:hmi-magnetogram:function - elem is required (DOM element).";
+			if(query["elem"]){
+				if(typeof(query["elem"]) !== "object" && typeof(query["elem"]) !== "string") return(Stereo.warn(msg));
+			} else return(Stereo.warn(msg));
+		
+			cb(query);
 		}
 	};
 };
