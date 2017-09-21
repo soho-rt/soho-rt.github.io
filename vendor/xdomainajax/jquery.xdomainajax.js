@@ -17,8 +17,9 @@ jQuery.ajax = (function(_ajax){
         exRegex = RegExp(protocol + '//' + hostname),
         //YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
         YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://desolate-lowlands-5734.herokuapp.com/scraper?url=',
-        query = 'select * from html where url="{URL}" and xpath="*"';
-    
+        //query = 'select * from html where url="{URL}" and xpath="*"';
+        query = '';
+        
     function isExternal(url) {
         return !exRegex.test(url) && /:\/\//.test(url);
     }
