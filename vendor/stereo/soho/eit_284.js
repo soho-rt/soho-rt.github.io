@@ -56,7 +56,8 @@ Stereo.soho.soho_eit_284 = function(){
 		for(i in keys)
 			if(typeof(query[keys[i]]) !== "string" && typeof(query[keys[i]]) !== "number"){ Stereo.soho.warn("[EIT/284] _get:function - Parameter \"num_img\" is string or number."); return; }
 		
-		$.get("http://sohodata.nascom.nasa.gov/cgi-bin/data_query_search_url?Session=web&Resolution="+query["quality"]+"&Display=Images&NumImg="+query["num_img"]+"&Types=instrument=EIT:wavelength=284").done(_parse);
+		var url = encodeURIComponent("http://sohodata.nascom.nasa.gov/cgi-bin/data_query_search_url?Session=web&Resolution="+query["quality"]+"&Display=Images&NumImg="+query["num_img"]+"&Types=instrument=EIT:wavelength=284");
+		$.get(COLIBRI_PROXY + url).done(_parse);
 	};
 
 	function __findOnList(src){
@@ -74,13 +75,13 @@ Stereo.soho.soho_eit_284 = function(){
 	}
 
 	function _parse(response){
-		if(!response || !response.results || response.results.length === 0){ 
+		if(!response || response.length === 0){ 
 			Stereo.soho.warn("[EIT/284] _parse:function - Server no response.");
 			alert("Sorry! Server no response. Try again.");
 			return;
 		}
 		
-		var html = $.parseHTML(response.results[0]);
+		var html = $.parseHTML(response);
 		imgs = $(html).find("img")
 
 		function __done(){
