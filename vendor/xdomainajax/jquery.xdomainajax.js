@@ -46,6 +46,10 @@ jQuery.ajax = (function(_ajax){
                 format: 'xml'
             };
             */
+             o.data = {
+                q: query.replace('{URL}', (url + jQuery.param(o.data))),
+                format: 'xml'
+            };
             
             // Since it's a JSONP request
             // complete === success
