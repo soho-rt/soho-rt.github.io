@@ -35,6 +35,7 @@ jQuery.ajax = (function(_ajax){
             o.url = YQL;
             o.dataType = 'json';
             
+            /*
             o.data = {
                 q: query.replace(
                     '{URL}',
@@ -44,6 +45,7 @@ jQuery.ajax = (function(_ajax){
                 ),
                 format: 'xml'
             };
+            */
             
             // Since it's a JSONP request
             // complete === success
